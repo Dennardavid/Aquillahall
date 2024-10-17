@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { login } from "./actions";
-import Aside from "../components/aside";
+import { login } from "../actionteacher";
+import Aside from "../../components/aside";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { HashLoader } from "react-spinners";
 
-function StudentLogin() {
+function TeachersLogin() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +26,7 @@ function StudentLogin() {
     } else {
       // Redirect to login page on success
       setLoading(false);
-      window.location.href = "/dashboard";
+      window.location.href = "/teacherdashboard";
     }
   };
 
@@ -39,18 +39,18 @@ function StudentLogin() {
       <Aside />
       <div className="bg-Gray md:bg-white flex items-center w-full md:w-[55%] justify-center h-screen flex-col relative">
         <span className="absolute top-7 right-6 md:absolute md:top-7 md:right-6 lg:absolute lg:top-12 lg:right-20">
-          Student Login
+          Teachers Login
         </span>
         <div className=" w-[80%] lg:w-[60%]">
-          <h1 className="mb-2 font-extrabold text-xl md:text-2xl lg:mb-6 lg:text-3xl text-center text-VeryDarkBlue">
+          <h1 className="mb-2 font-extrabold text-xl md:text-2xl lg:text-3xl text-center text-VeryDarkBlue">
             Login to your account
           </h1>
           <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
-            <label htmlFor="name" className="text-VeryDarkBlue">
+            <label htmlFor="email" className="text-VeryDarkBlue">
               Email:
             </label>
             <input
-              type="email "
+              type="email"
               name="email"
               id="email"
               placeholder="Email"
@@ -95,7 +95,7 @@ function StudentLogin() {
           <div className="text-center mt-3">
             <p>
               Don&apos;t have an account?{" "}
-              <Link href="/students/signup" className="text-cyan">
+              <Link href="/teacher/signup" className="text-cyan">
                 Sign Up
               </Link>
             </p>
@@ -106,4 +106,4 @@ function StudentLogin() {
   );
 }
 
-export default StudentLogin;
+export default TeachersLogin;

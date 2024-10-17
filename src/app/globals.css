@@ -2,26 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+input {
+  @apply ring-1 ring-cyan p-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-cyan;
+}
+button {
+  @apply border-none bg-cyan text-white font-medium text-sm lg:text-base hover:bg-Cyanhover;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1,h2,h3,h4,h5,h6 {
+  @apply text-VeryDarkBlue;
 }
